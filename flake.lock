@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "iterm-color-schemes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1644340748,
+        "narHash": "sha256-g1LJjKHhA3oZYb6Os1jf/7Jjay5E6wasbn+NaM4AAkc=",
+        "owner": "mbadolato",
+        "repo": "iTerm2-Color-Schemes",
+        "rev": "801bdde78b5e8077c4a3614f51870367fd638e37",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mbadolato",
+        "repo": "iTerm2-Color-Schemes",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1646497237,
+        "narHash": "sha256-Ccpot1h/rV8MgcngDp5OrdmLTMaUTbStZTR5/sI7zW0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "062a0c5437b68f950b081bbfc8a699d57a4ee026",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "iterm-color-schemes": "iterm-color-schemes",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
