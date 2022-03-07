@@ -23,7 +23,7 @@
         };
     in
     {
-      lib = forAllSystems (sys: {
+      lib = forAllSystems (sys: let pkgs = pkgsFor inputs.nixpkgs sys []; in {
         op = pkgs.callPackage ./lib/operators.nix { };
         float = pkgs.callPackage ./lib/float.nix { };
         hex = pkgs.callPackage ./lib/hex.nix { };
