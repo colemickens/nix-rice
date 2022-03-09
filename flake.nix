@@ -27,14 +27,15 @@
       lib = forAllSystems (sys:
         let
           pkgs = pkgsFor inputs.nixpkgs sys [ ];
-        in
-        {
-          op = pkgs.callPackage ./lib/operators.nix { };
-          float = pkgs.callPackage ./lib/float.nix { };
-          hex = pkgs.callPackage ./lib/hex.nix { };
-          color = pkgs.callPackage ./lib/color.nix { };
-          palette = pkgs.callPackage ./lib/palette.nix { };
-        }
+          callPackage = pkgs.lib.callPackageWith ( pkgs // self);
+          self = rec {
+            op = callPackage ./lib/operators.nix { };
+            float = callPackage ./lib/float.nix { };
+            hex = callPackage ./lib/hex.nix { };
+            color = callPackage ./lib/color.nix { };
+            palette = callPackage ./lib/palette.nix { };
+          };
+          in (self)
       );
       # how lazy is nix?
       colorschemes =
