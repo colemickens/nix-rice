@@ -61,7 +61,7 @@
               substring 0 (sLen - sufLen) str
             else
               str;
-          gen = dir: with builtins; mapAttrs' (name: _: { name = "${removeSuffix ".json" name}"; value = let f = "${dir}/${name}"; in builtins.fromJSON (readFile (trace f f)); })
+          gen = dir: with builtins; mapAttrs' (name: _: { name = "${removeSuffix ".json" name}"; value = let f = "${dir}/${name}"; in builtins.fromJSON (readFile f); })
             (filterAttrs (name: _: hasSuffix ".json" name)
               (readDir dir));
         in
